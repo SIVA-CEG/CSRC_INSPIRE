@@ -137,3 +137,15 @@
     opacity: 1;
   }
 }
+.field-group select {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+  background: white;
+  font-size: 14px;
+}
+
+.field-group select:focus {
+  border-color: #2563eb;
+}
