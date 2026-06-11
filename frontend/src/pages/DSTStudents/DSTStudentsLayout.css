@@ -1,0 +1,132 @@
+/* ─── DST Students Layout ─── */
+.dst-students-layout {
+  display: flex;
+  min-height: 100vh;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #f4f6f9;
+}
+
+/* ─── Sidebar ─── */
+.dst-sidebar {
+  width: 260px;
+  min-width: 260px;
+  background: #1a5c38;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.18);
+}
+
+.dst-sidebar-header {
+  padding: 28px 24px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dst-sidebar-logo {
+  font-size: 15px;
+  font-weight: 700;
+  color: #f5c842;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.dst-sidebar-sub {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.dst-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 14px 12px;
+  gap: 4px;
+}
+
+.dst-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 11px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s, color 0.15s;
+}
+
+.dst-nav-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.dst-nav-item.active {
+  background: #f5c842;
+  color: #1a3d28;
+  font-weight: 700;
+}
+
+.dst-nav-item.active .dst-nav-dot {
+  background: #1a3d28;
+  border-color: #1a3d28;
+}
+
+.dst-nav-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  flex-shrink: 0;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.dst-nav-item:hover .dst-nav-dot {
+  border-color: #fff;
+}
+
+/* ─── Main Content ─── */
+.dst-main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.dst-page-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+@media (max-width: 768px) {
+  .dst-students-layout {
+    flex-direction: column;
+  }
+  .dst-sidebar {
+    width: 100%;
+    min-width: unset;
+  }
+  .dst-sidebar-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 8px;
+  }
+  .dst-nav-item {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .dst-main-content {
+    padding: 20px 16px;
+  }
+}

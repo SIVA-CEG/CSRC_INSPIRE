@@ -1,0 +1,212 @@
+/* ═══════════════════════════════════════════════
+   CSRC INSPIRE — Navbar (Light Theme)
+═══════════════════════════════════════════════ */
+
+.dst-navbar {
+  height: 56px;
+  background: #FFFFFF;
+  border-bottom: 0.5px solid #D6E2EE;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 0 16px;
+  gap: 12px;
+  flex-shrink: 0;
+  z-index: 100;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── Left ── */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.navbar-menu-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 7px;
+  border: 0.5px solid #D6E2EE;
+  background: transparent;
+  color: #5A7591;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s, color 0.15s;
+}
+
+.navbar-menu-btn:hover {
+  background: #F0F4F8;
+  color: #1A2B40;
+}
+
+.navbar-menu-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.navbar-au-seal {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #EAF2FC;
+  border: 1px solid #B5D4F4;
+  color: #1E5FA5;
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.3px;
+}
+
+.navbar-au-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1A2B40;
+  white-space: nowrap;
+}
+
+.navbar-divider {
+  width: 1px;
+  height: 18px;
+  background: #D6E2EE;
+  flex-shrink: 0;
+}
+
+.navbar-page-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #5A7591;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Right ── */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.navbar-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 7px;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  color: #5A7591;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+
+.navbar-link svg {
+  width: 15px;
+  height: 15px;
+}
+
+.navbar-link:hover {
+  background: #F0F4F8;
+  color: #1A2B40;
+}
+
+.navbar-link.active {
+  background: #EAF2FC;
+  color: #1E5FA5;
+}
+
+/* Notification bell */
+.notification-btn {
+  position: relative;
+}
+
+.notif-dot {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #E24B4A;
+  border: 1.5px solid #FFFFFF;
+}
+
+/* Logout */
+.navbar-logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 7px;
+  border: 0.5px solid #D6E2EE;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  color: #5A7591;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.navbar-logout-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.navbar-logout-btn:hover {
+  background: #FCEBEB;
+  border-color: #F09595;
+  color: #A32D2D;
+}
+
+/* CSRC badge */
+.navbar-csrc-logo {
+  font-size: 13px;
+  font-weight: 800;
+  color: #1E5FA5;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  background: #EAF2FC;
+  border: 0.5px solid #B5D4F4;
+  border-radius: 6px;
+  user-select: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .navbar-au-name,
+  .navbar-page-title,
+  .navbar-divider {
+    display: none;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .dst-navbar {
+    padding: 0 12px;
+  }
+}

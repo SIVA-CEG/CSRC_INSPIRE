@@ -1,0 +1,95 @@
+.pdf-page{
+
+  width:210mm;
+  min-height:297mm;
+
+  background:white;
+
+  padding:20mm;
+
+  margin:auto;
+
+  color:black;
+
+  font-family:
+  "Times New Roman",
+  serif;
+
+  box-sizing:border-box;
+}
+
+.pdf-page h1{
+  text-align:center;
+  font-size:26px;
+  margin-bottom:6px;
+}
+
+.pdf-page h2{
+  text-align:center;
+  font-size:22px;
+}
+
+.pdf-page h3{
+  text-align:center;
+  margin-top:20px;
+}
+
+.pdf-page h4{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.pdf-page h5{
+  font-size:18px;
+}
+
+.pdf-table{
+
+  width:100%;
+
+  border-collapse:collapse;
+
+  margin-top:15px;
+}
+
+.pdf-table td,
+.pdf-table th{
+
+  border:1px solid #000;
+
+  padding:10px;
+}
+
+.pdf-table th{
+
+  background:#f3f4f6;
+}
+
+.pdf-section{
+  margin-top:30px;
+}
+
+.signature-area{
+
+  margin-top:80px;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  text-align:center;
+
+  font-weight:700;
+}
+
+.proceedings-body{
+  margin-top:30px;
+}
+
+@media print{
+
+  .pdf-page{
+    page-break-after:always;
+  }
+
+}

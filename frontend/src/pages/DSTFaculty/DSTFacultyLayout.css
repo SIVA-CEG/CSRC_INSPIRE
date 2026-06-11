@@ -1,0 +1,88 @@
+/* ═══════════════════════════════════════════════
+   CSRC INSPIRE — Layout Shell
+   (Sidebar + Navbar styles live in their own CSS)
+═══════════════════════════════════════════════ */
+
+:root {
+  --sidebar-w:           240px;
+  --sidebar-w-collapsed: 64px;
+  --navbar-h:            56px;
+}
+
+/* ── Root flex container ── */
+.dst-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background: #F0F4F8;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── Main column (navbar + scrollable content) ── */
+.dst-main-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ── Scrollable content area ── */
+.dst-content {
+  flex: 1;
+  overflow-y: auto;
+  background: #000000;
+  scrollbar-width: thin;
+  scrollbar-color: #C8D8E8 transparent;
+
+  display: flex;
+  justify-content: center; /* Centers all pages */
+}
+
+.dst-content > * {
+  width: 100%;
+  max-width: 1400px; /* Adjust as needed */
+  padding: 24px;
+}
+
+.dst-content::-webkit-scrollbar       { width: 5px; }
+.dst-content::-webkit-scrollbar-thumb { background: #C8D8E8; border-radius: 4px; }
+
+/* ── Mobile overlay ── */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 190;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .dst-layout {
+    display: block;
+  }
+
+  .dst-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: transform 0.22s ease;
+  }
+
+  .dst-sidebar:not(.collapsed) {
+    transform: translateX(0);
+  }
+
+  .sidebar-overlay {
+    display: block;
+  }
+
+  .dst-main-col {
+    height: 100vh;
+    width: 100%;
+  }
+}

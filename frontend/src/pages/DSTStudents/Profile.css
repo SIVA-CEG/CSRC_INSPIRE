@@ -1,0 +1,196 @@
+/* ─── Profile Page ─── */
+.profile-page {
+  width: 100%;
+}
+
+.profile-header {
+  margin-bottom: 24px;
+}
+
+.profile-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a3d28;
+  margin: 0 0 4px;
+}
+
+.profile-sub {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ─── Card ─── */
+.profile-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 28px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* ─── Rows ─── */
+.pf-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* 3:2:1 ratio */
+.pf-cols-3-2-1 > :nth-child(1) { flex: 3; min-width: 200px; }
+.pf-cols-3-2-1 > :nth-child(2) { flex: 2; min-width: 160px; }
+.pf-cols-3-2-1 > :nth-child(3) { flex: 1; min-width: 100px; }
+
+/* Salutation row */
+.pf-cols-sal {
+  align-items: flex-end;
+}
+.pf-cols-sal > .pf-field:nth-child(1) { width: 90px; flex-shrink: 0; }
+.pf-cols-sal > .pf-field:nth-child(2) { width: 80px; flex-shrink: 0; }
+.pf-cols-sal > .pf-grow { flex: 1; min-width: 160px; }
+.pf-cols-sal > .pf-desig { width: 220px; flex-shrink: 0; }
+
+/* 2 equal cols */
+.pf-cols-2 > .pf-field { flex: 1; min-width: 200px; }
+
+/* 4 cols */
+.pf-cols-4 > .pf-field { flex: 1; min-width: 130px; }
+.pf-cols-4 > .pf-email { flex: 2; min-width: 200px; }
+
+/* Date row */
+.pf-cols-date > .pf-field:first-child { width: 170px; flex-shrink: 0; }
+.pf-cols-date > .pf-grow { flex: 1; min-width: 200px; }
+.pf-cols-date > .pf-leave { width: 190px; flex-shrink: 0; }
+
+/* 5 cols */
+.pf-cols-5 > .pf-field { flex: 1; min-width: 120px; }
+
+/* Full width */
+.pf-full { flex: 1 1 100%; }
+
+/* ─── Field ─── */
+.pf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pf-field label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #374151;
+  white-space: nowrap;
+}
+
+.req {
+  color: #dc2626;
+}
+
+.pf-field input,
+.pf-field select,
+.pf-field textarea {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 13.5px;
+  color: #111827;
+  background: #fafafa;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  font-family: inherit;
+}
+
+.pf-field input:focus,
+.pf-field select:focus,
+.pf-field textarea:focus {
+  border-color: #1a5c38;
+  box-shadow: 0 0 0 3px rgba(26, 92, 56, 0.1);
+  background: #fff;
+}
+
+.pf-field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 28px;
+}
+
+.pf-field textarea {
+  resize: vertical;
+  min-height: 72px;
+}
+
+/* Date wrap */
+.pf-date-wrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fafafa;
+  overflow: hidden;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.pf-date-wrap:focus-within {
+  border-color: #1a5c38;
+  box-shadow: 0 0 0 3px rgba(26, 92, 56, 0.1);
+  background: #fff;
+}
+
+.pf-cal-icon {
+  padding: 8px 8px 8px 10px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.pf-date-wrap input {
+  border: none;
+  background: transparent;
+  padding: 8px 10px 8px 4px;
+  flex: 1;
+  box-shadow: none !important;
+}
+
+.pf-date-wrap input:focus {
+  outline: none;
+}
+
+/* ─── Actions ─── */
+.pf-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 4px;
+}
+
+.pf-btn-update {
+  background: #0ea5e9;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 9px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.pf-btn-update:hover {
+  background: #0284c7;
+}
+
+.pf-saved-msg {
+  font-size: 13px;
+  color: #16a34a;
+  font-weight: 600;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}

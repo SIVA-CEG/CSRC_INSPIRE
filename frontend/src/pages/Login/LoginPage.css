@@ -1,0 +1,591 @@
+/* ═══════════════════════════════════════════════
+   CSRC INSPIRE — Login Page (Light Theme)
+   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+═══════════════════════════════════════════════ */
+
+/* ── Layout ── */
+.login-page {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background: #F0F4F8;
+}
+
+/* ══════════════════════════════════
+   LEFT PANEL
+══════════════════════════════════ */
+.login-left {
+  width: 42%;
+  background: #1A3A6B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle geometric accent — top-right quadrant circle */
+.login-left::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.login-left::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+}
+
+.login-left-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  max-width: 360px;
+  width: 100%;
+}
+
+/* Brand row */
+.login-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.brand-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-seal {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.brand-university {
+  font-size: 15px;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 0.01em;
+}
+
+.brand-csrc {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.01em;
+}
+
+/* Hero text */
+.login-hero-text h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.15;
+  margin: 0 0 14px;
+  letter-spacing: -1px;
+}
+
+.login-hero-text p {
+  font-size: 14.5px;
+  color: rgba(255,255,255,0.62);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Scheme badges */
+.login-scheme-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.scheme-badge {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.09);
+  border: 0.5px solid rgba(255,255,255,0.18);
+  border-radius: 20px;
+  padding: 4px 12px;
+  letter-spacing: 0.02em;
+}
+
+/* Footer note */
+.login-footer-note {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.35);
+  line-height: 1.5;
+  padding-top: 16px;
+  border-top: 0.5px solid rgba(255,255,255,0.1);
+}
+
+/* ══════════════════════════════════
+   RIGHT PANEL
+══════════════════════════════════ */
+.login-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 32px;
+  gap: 20px;
+}
+
+.login-card {
+  background: #FFFFFF;
+  border: 0.5px solid #D6E2EE;
+  border-radius: 16px;
+  padding: 36px 36px 32px;
+  width: 100%;
+  max-width: 440px;
+}
+
+/* Card header */
+.login-card-header {
+  margin-bottom: 28px;
+}
+
+.login-card-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1A2B40;
+  margin: 0 0 5px;
+  letter-spacing: -0.3px;
+}
+
+.login-card-header p {
+  font-size: 13.5px;
+  color: #7A8FA6;
+  margin: 0;
+}
+
+/* ── Role list ── */
+.role-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.role-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 16px 16px 16px 14px;
+  border-radius: 12px;
+  border: 1.5px solid;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+
+.role-card:hover {
+  transform: translateX(2px);
+}
+
+.role-card:active {
+  transform: scale(0.99);
+}
+
+/* Role icon wrap */
+.role-icon-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.role-icon-wrap svg {
+  width: 20px;
+  height: 20px;
+}
+
+.role-card-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.role-card-label {
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
+}
+
+.role-card-desc {
+  font-size: 12px;
+  line-height: 1.5;
+  display: block;
+}
+
+.role-chevron {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  opacity: 0.45;
+}
+
+/* ── Role color themes ── */
+
+/* Blue — DST Faculty */
+.role-blue {
+  border-color: #B5D4F4;
+  color: #1A2B40;
+}
+.role-blue .role-icon-wrap {
+  background: #EAF2FC;
+  color: #1E5FA5;
+}
+.role-blue .role-card-label  { color: #1A3D6B; }
+.role-blue .role-card-desc   { color: #5A7A9B; }
+.role-blue:hover { background: #F2F8FE; border-color: #85B7EB; }
+
+/* Teal — DST Students */
+.role-teal {
+  border-color: #9FD9C0;
+  color: #1A2B40;
+}
+.role-teal .role-icon-wrap {
+  background: #E3F5EE;
+  color: #0F6E56;
+}
+.role-teal .role-card-label  { color: #0C4A38; }
+.role-teal .role-card-desc   { color: #3A7A62; }
+.role-teal:hover { background: #F0FAF5; border-color: #5DCAA5; }
+
+/* Violet — Women Scientists */
+.role-violet {
+  border-color: #C9C4F4;
+  color: #1A2B40;
+}
+.role-violet .role-icon-wrap {
+  background: #F0EDFE;
+  color: #534AB7;
+}
+.role-violet .role-card-label  { color: #3C3489; }
+.role-violet .role-card-desc   { color: #6A61B0; }
+.role-violet:hover { background: #F6F4FF; border-color: #AFA9EC; }
+
+/* ── Back button ── */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #7A8FA6;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 16px;
+  transition: color 0.15s;
+}
+
+.back-btn:hover { color: #1A2B40; }
+
+.back-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* ── Active role pill ── */
+.active-role-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: 20px;
+  padding: 5px 12px 5px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  border: 1px solid;
+}
+
+.active-role-pill .active-role-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.active-role-pill .active-role-icon svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* Pill color variants */
+.active-role-pill.role-blue {
+  background: #EAF2FC;
+  border-color: #B5D4F4;
+  color: #1A3D6B;
+}
+.active-role-pill.role-blue .active-role-icon {
+  background: #D0E8F9;
+  color: #1E5FA5;
+}
+
+.active-role-pill.role-teal {
+  background: #E3F5EE;
+  border-color: #9FD9C0;
+  color: #0C4A38;
+}
+.active-role-pill.role-teal .active-role-icon {
+  background: #C5EBD9;
+  color: #0F6E56;
+}
+
+.active-role-pill.role-violet {
+  background: #F0EDFE;
+  border-color: #C9C4F4;
+  color: #3C3489;
+}
+.active-role-pill.role-violet .active-role-icon {
+  background: #DDD8FA;
+  color: #534AB7;
+}
+
+/* ── Login form ── */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4A6278;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.form-field input {
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: #1A2B40;
+  background: #F7FAFD;
+  border: 1px solid #C8D8E8;
+  border-radius: 9px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.form-field input:focus {
+  border-color: #1E5FA5;
+  box-shadow: 0 0 0 3px rgba(30, 95, 165, 0.10);
+  background: #FFFFFF;
+}
+
+.form-field input::placeholder {
+  color: #A8BDD0;
+}
+
+/* Password field */
+.password-wrap {
+  position: relative;
+}
+
+.password-wrap input {
+  padding-right: 44px;
+}
+
+.pass-toggle {
+  position: absolute;
+  right: 11px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #8FA4B8;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  transition: color 0.15s;
+}
+
+.pass-toggle:hover { color: #1A2B40; }
+
+.pass-toggle svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Error ── */
+.login-error {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #A32D2D;
+  background: #FCEBEB;
+  border: 0.5px solid #F09595;
+  border-radius: 8px;
+  padding: 9px 12px;
+}
+
+.login-error svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+/* ── Form actions row ── */
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.forgot-link {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #5A7591;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.forgot-link:hover { color: #1E5FA5; }
+
+/* Submit button */
+.login-submit-btn {
+  padding: 10px 24px;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  color: #FFFFFF;
+  min-width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.login-submit-btn:hover  { opacity: 0.92; }
+.login-submit-btn:active { transform: scale(0.98); }
+.login-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.login-submit-btn.role-blue   { background: #1E5FA5; }
+.login-submit-btn.role-teal   { background: #0F6E56; }
+.login-submit-btn.role-violet { background: #534AB7; }
+.login-submit-btn.role-green {
+  background-color: #0F6E56; /* Your defined cmrg-green */
+}
+
+/* Spinner */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.35);
+  border-top-color: #FFFFFF;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Right panel footer ── */
+.login-right-footer {
+  font-size: 12px;
+  color: #9AB0C4;
+  text-align: center;
+  max-width: 440px;
+}
+
+.login-right-footer strong {
+  color: #5A7591;
+  font-weight: 500;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .login-page { flex-direction: column; }
+
+  .login-left {
+    width: 100%;
+    padding: 32px 28px;
+  }
+
+  .login-left-inner { gap: 20px; }
+
+  .login-hero-text h1 {
+    font-size: 28px;
+  }
+
+  .login-right { padding: 32px 20px; }
+
+  .login-card { padding: 28px 22px 24px; }
+}
+
+@media (max-width: 480px) {
+  .form-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .login-submit-btn { width: 100%; }
+  .forgot-link { text-align: center; }
+}
