@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
+import FacultyRegistrationPage from '../Login/FacultyRegistrationPage';
+
 
 const ROLES = [
   {
@@ -74,6 +76,7 @@ const LoginPage = ({ onLogin }) => {
   const [showPass, setShowPass]   = useState(false);
   const [error, setError]         = useState('');
   const [loading, setLoading]     = useState(false);
+const [showRegister, setShowRegister] = useState(false);
 
   const handleRoleSelect = (key) => {
     setSelected(key);
@@ -102,9 +105,46 @@ const LoginPage = ({ onLogin }) => {
       onLogin(selected);
     }, 900);
   };
+const facultyRoles = [
+  'dstFaculty',
+  'womenScientists',
+  'cmrgStudents'
+];
 
   const activeRole = ROLES.find(r => r.key === selected);
+if (showRegister && selected) {
+  return (
+    <div style={{ minHeight: '100vh', background: '#F5F7FA' }}>
+      <div
+        style={{
+          padding: '20px 30px',
+          background: '#fff',
+          borderBottom: '1px solid #E5EAF0',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '15px'
+        }}
+      >
+        <button
+          className="back-btn"
+          onClick={() => setShowRegister(false)}
+        >
+          ← Back to Login
+        </button>
 
+        <h2 style={{ margin: 0 }}>
+          New User Registration
+        </h2>
+      </div>
+
+      {facultyRoles.includes(selected) ? (
+        <FacultyRegistrationPage />
+      ) : (
+        <Profile registrationMode />
+      )}
+    </div>
+  );
+}
   return (
     <div className="login-page">
 
@@ -251,19 +291,32 @@ const LoginPage = ({ onLogin }) => {
                 )}
 
                 <div className="form-actions">
-                  <a href="#" className="forgot-link">Forgot password?</a>
-                  <button
-                    type="submit"
-                    className={`login-submit-btn ${activeRole.colorClass} ${loading ? 'loading' : ''}`}
-                    disabled={loading}
-                  >
-                    {loading ? (
-                      <span className="spinner" aria-label="Signing in…" />
-                    ) : (
-                      <>Sign in as {activeRole.short}</>
-                    )}
-                  </button>
-                </div>
+  <a href="#" className="forgot-link">
+    Forgot password?
+  </a>
+
+  <div className="login-action-group">
+    <button
+      type="button"
+      className="register-btn"
+      onClick={() => setShowRegister(true)}
+    >
+      Register
+    </button>
+
+    <button
+      type="submit"
+      className={`login-submit-btn ${activeRole.colorClass} ${loading ? 'loading' : ''}`}
+      disabled={loading}
+    >
+      {loading ? (
+        <span className="spinner" aria-label="Signing in…" />
+      ) : (
+        <>Sign in as {activeRole.short}</>
+      )}
+    </button>
+  </div>
+</div>
               </form>
             </>
           )}
