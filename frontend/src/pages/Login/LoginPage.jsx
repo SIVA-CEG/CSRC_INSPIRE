@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
 import FacultyRegistrationPage from '../Login/FacultyRegistrationPage';
-
+import InspireStudentRegistrationPage from '../Login/InspireStudentRegistrationPage';
 
 const ROLES = [
   {
@@ -137,11 +137,11 @@ if (showRegister && selected) {
         </h2>
       </div>
 
-      {facultyRoles.includes(selected) ? (
-        <FacultyRegistrationPage />
-      ) : (
-        <Profile registrationMode />
-      )}
+      {selected === "dstStudents" ? (
+  <InspireStudentRegistrationPage />
+) : (
+  <FacultyRegistrationPage />
+)}
     </div>
   );
 }
